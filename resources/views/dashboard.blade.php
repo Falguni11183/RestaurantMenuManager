@@ -929,6 +929,37 @@
             }
 
         }
+        /* ================= SIDEBAR LOGOUT ================= */
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-logout {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.sidebar-logout button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 15px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.sidebar-logout button:hover {
+    background: #b91c1c;
+}
 
     </style>
 
@@ -1016,6 +1047,21 @@
                 </span>
 
             </a>
+                        <!-- ADMIN LOGOUT -->
+
+            <div class="sidebar-logout">
+                <form
+                    action="{{ route('admin.logout') }}"
+                    method="POST"
+                >
+                    @csrf
+
+                    <button type="submit">
+                        <span class="nav-icon">🚪</span>
+                        <span>Logout</span>
+                    </button>
+                </form>
+            </div>
 
 
         </nav>

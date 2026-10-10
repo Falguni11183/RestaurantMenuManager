@@ -53,6 +53,26 @@
         .nav-links a:hover {
             color: #4ade80;
         }
+        /* ================= LOGOUT BUTTON ================= */
+
+.logout-form {
+    margin: 0;
+}
+
+.logout-btn {
+    background: #dc2626;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
 
 
         /* ================= HERO ================= */
@@ -479,28 +499,41 @@
 
     <!-- ================= NAVBAR ================= -->
 
-    <nav class="navbar">
+    
+<!-- ================= NAVBAR ================= -->
 
-        <div class="brand">
+<nav class="navbar">
 
-            🍽️ Restaurant Menu
+    <div class="brand">
+        🍽️ Restaurant Menu
+    </div>
 
-        </div>
+    <div class="nav-links">
+        <a href="#specials">
+            Today's Specials
+        </a>
 
+        <a href="#menu">
+            Menu
+        </a>
+    </div>
 
-        <div class="nav-links">
+    @auth
+        <form
+            action="{{ route('logout') }}"
+            method="POST"
+            class="logout-form"
+        >
+            @csrf
 
-            <a href="#specials">
-                Today's Specials
-            </a>
+            <button type="submit" class="logout-btn">
+                Logout
+            </button>
+        </form>
+    @endauth
 
-            <a href="#menu">
-                Menu
-            </a>
+</nav>
 
-        </div>
-
-    </nav>
 
 
 
